@@ -7,6 +7,9 @@ function App() {
     const data = books.getBestSeller();
 
     console.log(data);
+
+    const data2 = books.getRecommend();
+    console.log(data2);
   } catch (e) {
     throw new Error(`${e}`);
   }
