@@ -1,9 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from 'react';
+import './App.css';
+import books from './Api/Api';
 
 function App() {
-  return <div className="App"></div>;
+  try {
+    const data = books.getBestSeller();
+
+    console.log(data);
+  } catch (e) {
+    throw new Error(`${e}`);
+  }
+  return <div className="App">test</div>;
 }
 
 export default App;
