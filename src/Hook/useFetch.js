@@ -2,7 +2,7 @@ import { useReducer } from 'react';
 import { initState, reducer } from '../Reducer/Reducer';
 // LOGIN, LOGOUT
 
-const useSearch = () => {
+const UseFetch = () => {
   const [state, dispatch] = useReducer(reducer, initState);
 
   return {
@@ -21,4 +21,4 @@ const useSearch = () => {
   };
 };
 
-export default useSearch;
+export default UseFetch;

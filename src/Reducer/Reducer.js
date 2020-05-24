@@ -1,3 +1,6 @@
+import bookApi from '../Api/Api';
+// getBestSeller, getRecommend, getNewBook, searchBook
+
 export const initState = {
   login: false,
   user: {
