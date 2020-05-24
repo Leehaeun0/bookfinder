@@ -70,9 +70,9 @@ nav {
     color: $blue;
   }
   .search-wrap {
+    position: relative;
     margin-right: 5px;
     display: inline-block;
-    position: relative;
     vertical-align: top;
   }
   input {
@@ -91,7 +91,7 @@ nav {
     right: 7px;
   }
 }
-@media screen and (max-width: 882px) { 
+@media screen and (max-width: 870px) { 
   .search-wrap {
     margin-top: 15px;
   }
