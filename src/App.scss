@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+
+$white : #fff;
+$blue : #2749F9;
+$padding : 40px;
+
+body * {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+ul, li, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+ul {list-style: none;}
+
+//  스타일 시작
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px $padding;
+  background-color: $blue;
+
+  &-tit {
+    color: #fff;
+    font-size: 39px;
+  }
+  &-btn {
+    display: inline-block;
+    height: 40px;
+    color: $blue;
+    padding: 0 20px;
+    font-size: 20px;
+    line-height: 0px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    background-color: #fff;
+  }
+}
+
+$gray: #A6A4A4;
+
+nav {
+  padding: 14px $padding;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: yellow;
+
+  ul {
+    display: inline-block;
+    // background-color: green;
+  }
+  li {
+    display: inline-block;
+    padding: 0 45px;
+    color: $gray;
+    font-size: 23px;
+    font-weight: 500;
+  }
+  li:first-child {
+    padding-left: 5px;
+  }
+  .active {
+    color: $blue;
+  }
+  .search-wrap {
+    margin-right: 5px;
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+  }
+  input {
+    width: 280px;
+    height: 37px;
+    border: none;
+    border-bottom: 2px solid $blue;
+    font-size: 16px;
+    padding: 0 40px 0 10px;
+  }
+  .fa-search {
+    position: absolute;
+    color: $blue;
+    font-size: 24px;
+    top: 3px;
+    right: 7px;
+  }
+}
+@media screen and (max-width: 882px) { 
+  .search-wrap {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 592px) { 
+  nav { 
+    ul {
+      width: 100%;
+    }
+    li {
+      width: 100%;
+      padding: 5px 45px !important;
+      text-align: center;
+    }
+  }
+  .search-wrap {
+    margin: 10px auto 0 !important;
+  }
+}
