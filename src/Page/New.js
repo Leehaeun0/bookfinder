@@ -2,17 +2,17 @@ import React, { useEffect, useContext } from 'react';
 import BookList from '../Components/BookList';
 import { BookContext } from '../Context/Context';
 
-const Search = () => {
-  const { searchBook } = useContext(BookContext);
-  // useEffect(() => {
-  //   searchBook('가');
-  // }, []);
+const New = () => {
+  const { setNew } = useContext(BookContext);
+  useEffect(() => {
+    setNew();
+  }, []);
   return (
     <>
-      <div>Search</div>
+      <div>new</div>
       <BookList />
     </>
   );
 };
 
-export default Search;
+export default New;
