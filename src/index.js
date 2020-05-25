@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
-import App from './App';
+import './login.scss';
 import LoginRouter from './Router/LoginRouter';
 import * as serviceWorker from './serviceWorker';
 import { ContextProvider } from './Context/Context';

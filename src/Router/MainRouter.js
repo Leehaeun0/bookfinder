@@ -8,7 +8,7 @@ import Search from '../Page/Search';
 const MainRouter = () => {
   return (
     <>
-      <Route exact path="/" component={BestSeller} />
+      <Route path="/" exact component={BestSeller} />
       <Route path="/recommend" component={Recommend} />
       <Route path="/new" component={New} />
       <Route path="/search" component={Search} />

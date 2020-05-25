@@ -10,7 +10,6 @@ const Recommend = () => {
   }, []);
   return (
     <>
-      <div>recommend</div>
       <BookList />
     </>
   );

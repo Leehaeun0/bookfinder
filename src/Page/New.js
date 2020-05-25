@@ -9,7 +9,6 @@ const New = () => {
   }, []);
   return (
     <>
-      <div>new</div>
       <BookList />
     </>
   );

@@ -1,7 +1,7 @@
 import { useReducer, useRef } from 'react';
 import bookApi from '../Api/Api';
 import { initState, reducer } from '../Reducer/Reducer';
-// reducer: LOGIN, LOGOUT
+// reducer: LOGIN, LOGOUT, GETBOOK, GET_HISTORY, SEARCH
 
 const userBD = [
   { id: 0, userId: 'haeun114', userPw: 'haeun114', name: 'haeun' },
@@ -83,21 +83,47 @@ const UseFetch = () => {
 
   // 페이지 로드 관련
   const setBestSeller = async () => {
-    const data = await bookApi.getBestSeller();
-    console.log(data);
-    dispatch({ type: 'GETBOOK', books: data.item });
+    let data;
+    if (state.history.some(log => log.page === '/')) {
+      data = state.history.find(log => log.page === '/').data;
+      dispatch({ type: 'GET_HISTORY', books: data });
+      return;
+    }
+    data = await bookApi.getBestSeller();
+    dispatch({ type: 'GETBOOK', books: data.item, location: '/' });
   };
 
   const setRecommend = async () => {
-    const data = await bookApi.getRecommend();
-    console.log(data);
-    dispatch({ type: 'GETBOOK', books: data.item });
+    let data;
+    if (state.history.some(log => log.page === '/recommend')) {
+      data = state.history.find(log => log.page === '/recommend').data;
+      dispatch({ type: 'GET_HISTORY', books: data });
+      return;
+    }
+    data = await bookApi.getRecommend();
+    dispatch({ type: 'GETBOOK', books: data.item, location: '/recommend' });
   };
 
   const setNew = async () => {
-    const data = await bookApi.getNewBook();
-    console.log(data);
-    dispatch({ type: 'GETBOOK', books: data.item });
+    let data;
+    if (state.history.some(log => log.page === '/new')) {
+      data = state.history.find(log => log.page === '/new').data;
+      dispatch({ type: 'GET_HISTORY', books: data });
+      return;
+    }
+    data = await bookApi.getNewBook();
+    dispatch({ type: 'GETBOOK', books: data.item, location: '/new' });
+  };
+
+  const searchBook = async value => {
+    let data;
+    if (state.searchLog.some(log => log.term === value)) {
+      data = state.searchLog.find(log => log.term === value).data;
+      dispatch({ type: 'GET_HISTORY', books: data });
+      return;
+    }
+    data = await bookApi.searchBook(value);
+    dispatch({ type: 'SEARCH', books: data.item, term: value });
   };
 
   // 이벤트
@@ -134,15 +160,9 @@ const UseFetch = () => {
     history.goBack();
   };
 
-  // 메인 페이지
-  // 검색 이벤트
-  const searchBook = async value => {
-    const data = await bookApi.searchBook(value);
-    dispatch({ type: 'GETBOOK', books: data.item });
-  };
-
   return {
     state,
+    logout,
     loginId,
     loginPw,
     loginSubmit,

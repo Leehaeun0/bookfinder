@@ -5,8 +5,11 @@ import Login from '../Page/Login';
 
 const LoginRouter = () => (
   <div>
-    <Route path="/login" exact component={Login} />
-    <Route path="/" exact component={App} />
+    <Route exact path="/" component={App} />
+    <Route path="/recommend" component={App} />
+    <Route path="/new" component={App} />
+    <Route path="/search" component={App} />
+    <Route path="/login" component={Login} />
   </div>
 );
 

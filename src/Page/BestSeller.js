@@ -12,7 +12,6 @@ const BestSeller = () => {
 
   return (
     <>
-      <div>BestSeller</div>
       <BookList />
     </>
   );
