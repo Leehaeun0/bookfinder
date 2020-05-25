@@ -4,19 +4,14 @@ import { BookContext } from '../Context/Context';
 
 const SearchInput = ({ location }) => {
   const { searchBook } = useContext(BookContext);
+
   const inputRef = useRef();
+  const submitRef = useRef();
 
   const enterSearch = e => {
-    // window.open('/search');
-    if (!e.target.value.trim()) {
-      // e.target.value = '';
-      return;
-    }
+    if (!e.target.value.trim()) return;
     if (e.key !== 'Enter') return;
-    // window.location.href = '/search';
-    searchBook(e.target.value);
-    // // e.target.value = '';
-    // enterSearch();
+    submitRef.current.click();
   };
 
   const clickSearch = e => {
@@ -31,10 +26,10 @@ const SearchInput = ({ location }) => {
 
   return (
     <div className="search-wrap">
-      <input type="text" onKeyPress={enterSearch} ref={inputRef} />
-      <a href="/search" onClick={clickSearch}>
+      <input type="text" onKeyUp={enterSearch} ref={inputRef} />
+      <Link to="/search" onClick={clickSearch} ref={submitRef}>
         <i type="icon" className="fas fa-search" />
-      </a>
+      </Link>
     </div>
   );
 };

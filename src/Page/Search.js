@@ -4,12 +4,11 @@ import { BookContext } from '../Context/Context';
 
 const Search = () => {
   const { searchBook } = useContext(BookContext);
-  // useEffect(() => {
-  //   searchBook('가');
-  // }, []);
+  useEffect(() => {
+    searchBook('가');
+  }, []);
   return (
     <>
-      <div>Search</div>
       <BookList />
     </>
   );

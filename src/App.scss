@@ -20,26 +20,44 @@ ul {list-style: none;}
 .header {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   padding: 10px $padding;
   background-color: $blue;
+
+  .user-name {
+    margin: 0 15px 0 auto;
+    color: #fff;
+    b {
+      font-size: 1.3em;
+      color: #fff;
+    }
+  }
 
   &-tit {
     color: #fff;
     font-size: 39px;
   }
-  &-btn {
+  &-loginBt {
     display: inline-block;
     height: 40px;
-    color: $blue;
     padding: 0 20px;
     font-size: 20px;
-    line-height: 0px;
     font-weight: 500;
+    line-height: 40px;
     border: none;
     border-radius: 30px;
+    cursor: pointer;
+  }
+  &-btn {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: $blue;
+  }
+  &-link {
+    color: $blue;
     background-color: #fff;
+    margin-left: auto;
   }
 }
 

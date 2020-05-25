@@ -6,9 +6,11 @@ export const initState = {
     name: '',
   },
   book: [],
-  history: [{ page: '', data: [] }],
+  history: [],
   searchLog: [],
 };
+// history : [{ page: '', data: [] }]
+// searchLog : [{ term: '', data: []}]
 
 export const reducer = (state, action) => {
   switch (action.type) {
@@ -28,8 +30,31 @@ export const reducer = (state, action) => {
       return {
         ...state,
         book: action.books,
+        history: [
+          ...state.history,
+          {
+            page: action.location,
+            data: action.books,
+          },
+        ],
       };
-
+    case 'GET_HISTORY':
+      return {
+        ...state,
+        book: action.books,
+      };
+    case 'SEARCH':
+      return {
+        ...state,
+        book: action.books,
+        searchLog: [
+          ...state.searchLog,
+          {
+            term: action.term,
+            data: action.books,
+          },
+        ],
+      };
     default:
       return state;
   }
