@@ -9,11 +9,8 @@
     "axios": "^0.19.2",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
-<<<<<<< HEAD
     "eslint-config-react-app": "^5.2.1",
-=======
     "node-sass": "^4.14.1",
->>>>>>> 41f4d221b5b91dcac5f65de8eb92071ac6c4a7ae
     "react": "^16.13.1",
     "react-app": "^1.1.2",
     "react-dom": "^16.13.1",
