@@ -6,8 +6,10 @@ export const initState = {
     name: '',
   },
   book: [],
+  allBook: [],
   history: [{ page: '', data: [] }],
   searchLog: [],
+  inputValue: '',
 };
 
 export const reducer = (state, action) => {
@@ -28,6 +30,16 @@ export const reducer = (state, action) => {
       return {
         ...state,
         book: action.books,
+      };
+    case 'INPUT':
+      return {
+        ...state,
+        inputValue: action.value,
+      };
+    case 'ALLBOOKS':
+      return {
+        ...state,
+        allBook: action.allBook,
       };
 
     default:

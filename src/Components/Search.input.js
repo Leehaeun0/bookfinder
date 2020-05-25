@@ -3,18 +3,26 @@ import { Link } from 'react-router-dom';
 import { BookContext } from '../Context/Context';
 
 const SearchInput = ({ location }) => {
-  const { searchBook } = useContext(BookContext);
+  const { state, searchBook, inputState } = useContext(BookContext);
   const inputRef = useRef();
+
+  const onChange = e => {
+    inputState(e.target.value);
+  };
 
   const enterSearch = e => {
     // window.open('/search');
     if (!e.target.value.trim()) {
       // e.target.value = '';
+      // e.preventDefault();
       return;
     }
-    if (e.key !== 'Enter') return;
+    if (e.key !== 'Enter') {
+      // e.preventDefault();
+      return;
+    }
     // window.location.href = '/search';
-    searchBook(e.target.value);
+    searchBook(state.inputValue);
     // // e.target.value = '';
     // enterSearch();
   };
@@ -30,12 +38,19 @@ const SearchInput = ({ location }) => {
   };
 
   return (
-    <div className="search-wrap">
-      <input type="text" onKeyPress={enterSearch} ref={inputRef} />
+    <form action="/search" className="search-wrap">
+      {console.log(state.inputValue)}
+      <input
+        type="text"
+        onKeyPress={enterSearch}
+        onChange={onChange}
+        ref={inputRef}
+        value={state.inputValue}
+      />
       <a href="/search" onClick={clickSearch}>
         <i type="icon" className="fas fa-search" />
       </a>
-    </div>
+    </form>
   );
 };
 

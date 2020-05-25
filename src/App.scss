@@ -15,6 +15,7 @@ ul, li, h1, h2, h3 {
   padding: 0;
 }
 ul {list-style: none;}
+button {background-color: #fff;}
 
 //  스타일 시작
 .header {
@@ -126,7 +127,7 @@ nav {
     display: inline-block;
     vertical-align: top;
     width: 200px;
-    margin: 0 20px 10px;
+    margin: 0 20px 25px;
     text-align: center;
     // background-color: green;
   }
@@ -147,5 +148,49 @@ nav {
   &-price {
     font-weight: 700;
     color: $blue;
+  }
+}
+
+// detail
+.detail-wrap {
+  position: relative;
+  width: 70%;
+  min-height: 450px;
+  margin: 120px auto;
+  max-width: 1100px;
+  overflow: hidden;
+
+  img {
+    float: left;
+    width: 350px;
+    margin-right: 45px;
+    margin-bottom: 30px;
+  }
+  .tit {
+    display: block;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: $blue;
+  }
+  .date {
+    display: block;
+    font-size: 21px;
+    // color: $blue;
+    // padding-bottom: 5px;
+  }
+  .info {
+    font-size: 17px;
+  }
+  button {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    border: none;
+    color: $white;
+    background-color: $blue;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 35px;
   }
 }

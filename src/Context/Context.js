@@ -12,6 +12,8 @@ export function ContextProvider({ children }) {
     setRecommend,
     setNew,
     searchBook,
+    inputState,
+    getAllBooks,
   } = UseFetch();
   const contextValue = {
     state,
@@ -21,6 +23,8 @@ export function ContextProvider({ children }) {
     setRecommend,
     setNew,
     searchBook,
+    inputState,
+    getAllBooks,
   };
   return (
     <BookContext.Provider value={contextValue}>{children}</BookContext.Provider>

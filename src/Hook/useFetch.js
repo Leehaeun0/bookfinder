@@ -39,11 +39,21 @@ const UseFetch = () => {
   };
 
   const searchBook = async value => {
-    // window.location.href = '/search';
-
     const data = await bookApi.searchBook(value);
-    // console.log(data);
     dispatch({ type: 'GETBOOK', books: data.item });
+  };
+
+  const inputState = value => {
+    dispatch({ type: 'INPUT', value });
+  };
+
+  const getAllBooks = async () => {
+    const data1 = await bookApi.getBestSeller();
+    const data2 = await bookApi.getRecommend();
+    const data3 = await bookApi.getNewBook();
+    const allBook = [...data1.item, ...data2.item, ...data3.item];
+    // console.log(data1.item, data2, data3);
+    dispatch({ type: 'ALLBOOKS', allBook });
   };
 
   return {
@@ -54,6 +64,8 @@ const UseFetch = () => {
     setRecommend,
     setNew,
     searchBook,
+    inputState,
+    getAllBooks,
   };
 };
 
