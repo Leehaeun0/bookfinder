@@ -1,11 +1,25 @@
 import React from 'react';
-// import UseFetch from '../Reducer/useFetch';
+import UseFetch from '../Hook/useFetch';
 
 export const BookContext = React.createContext();
 
 export function ContextProvider({ children }) {
-  // const [] = UseFetch();
-  const contextValue = ['test1'];
+  const {
+    state,
+    loginId,
+    loginPw,
+    loginSubmit,
+    loginInputEv,
+    loginBtEv,
+  } = UseFetch();
+  const contextValue = {
+    state,
+    loginId,
+    loginPw,
+    loginSubmit,
+    loginInputEv,
+    loginBtEv,
+  };
   return (
     <BookContext.Provider value={contextValue}>{children}</BookContext.Provider>
   );
