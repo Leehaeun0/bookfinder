@@ -1,18 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { BookContext } from './Context/Context';
 import './App.css';
-import books from './Api/Api';
 
 function App() {
-  try {
-    const data = books.getBestSeller();
-
-    console.log(data);
-
-    const data2 = books.getRecommend();
-    console.log(data2);
-  } catch (e) {
-    throw new Error(`${e}`);
-  }
+  const bookContext = useContext(BookContext);
+  console.log(bookContext);
   return <div className="App">test</div>;
 }
 
