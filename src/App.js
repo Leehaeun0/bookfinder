@@ -1,10 +1,7 @@
-import React, { useContext } from 'react';
-import { BookContext } from './Context/Context';
+import React from 'react';
 import './App.css';
 
 function App() {
-  const bookContext = useContext(BookContext);
-  console.log(bookContext);
   return <div className="App">test</div>;
 }
 
