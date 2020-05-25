@@ -1,11 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
-import UseFetch from '../Reducer/useFetch';
+// import UseFetch from '../Reducer/useFetch';
 
 export const BookContext = React.createContext();
 
 export function ContextProvider({ children }) {
-  const [] = UseFetch();
-  const contextValue = [];
+  // const [] = UseFetch();
+  const contextValue = ['test'];
   return (
     <BookContext.Provider value={contextValue}>{children}</BookContext.Provider>
   );
