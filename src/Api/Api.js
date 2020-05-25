@@ -16,7 +16,7 @@ const BookApi = (apiName, categoryId) =>
       console.error(e);
     });
 
-const books = {
+const bookApi = {
   getBestSeller: (categoryId = 100) => BookApi('bestSeller', categoryId),
   getRecommend: (categoryId = 100) => BookApi('recommend', categoryId),
   getNewBook: (categoryId = 100) => BookApi('newBook', categoryId),
@@ -30,4 +30,4 @@ const books = {
       .then(r => r.data),
 };
 
-export default books;
+export default bookApi;
