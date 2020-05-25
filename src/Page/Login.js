@@ -1,9 +1,11 @@
 import React from 'react';
+import LoginSec from '../Components/LoginSec';
 
-const Login = () => {
+const Login = ({ history }) => {
   return (
     <>
-      <h1>Book Finder</h1>
+      <h1 className="loginH1">Book Finder</h1>
+      <LoginSec history={history} />
     </>
   );
 };
