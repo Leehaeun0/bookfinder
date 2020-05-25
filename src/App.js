@@ -1,20 +1,16 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 import Header from './Components/Header';
-// import books from './Api/Api';
+import MainRouter from './Router/MainRouter';
 
 function App() {
-  // try {
-  //   const data = books.getBestSeller();
-  //   console.log(data);
-  // } catch (e) {
-  //   throw new Error(`${e}`);
-  // }
-
   return (
-    <main className="App">
-      <Header />
-    </main>
+    <>
+      <div className="App">
+        <Header />
+      </div>
+      <MainRouter />
+    </>
   );
 }
 

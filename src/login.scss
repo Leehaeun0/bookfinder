@@ -1,0 +1,62 @@
+$marginAuto-v : 40px auto 0;
+
+.loginH1 {
+  margin-top: 140px;
+  font-size: 45px;
+  color:#2749F9;
+  text-align: center;
+}
+
+.LoginWindow {
+  margin: $marginAuto-v;
+  padding: 60px;
+  width: 470px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.21);
+  border-radius: 22px;
+
+  div {
+    position: relative;
+    margin-bottom: 2.5em;
+  }
+  
+  input {
+    display: block;
+    padding: 10px 18px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 1em;
+  }
+
+  span {
+    display: none;
+    position: absolute;
+    margin: 5px 0 0 10px;
+    font-size: 0.8em;
+    color: #ff4040;
+    
+    &.active {
+      display: inline;
+    }
+  }
+  
+  button {
+    display: block;
+    margin-top: 2em;
+    width: 100%;
+    border: 0;
+    font-size: 25px;
+    color: #fff;
+    line-height: 2.6em;
+    text-align: center;
+    text-decoration: none;
+    background: #ccc;
+    border-radius: 3px;
+
+    &.active {
+      background: #2749F9;
+      cursor: pointer;
+    }
+  }
+}

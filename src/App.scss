@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&display=swap');
+
+$white : #fff;
+$blue : #2749F9;
+$padding : 40px;
+
+body * {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  color: #181818;
+}
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 50px;
+}
+ul, li, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+ul {list-style: none;}
+button {background-color: #fff;}
+
+//  스타일 시작
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+  align-items: center;
+  padding: 10px $padding;
+  background-color: $blue;
+
+  .user-name {
+    margin: 0 15px 0 auto;
+    color: #fff;
+    b {
+      font-size: 1.3em;
+      color: #fff;
+    }
+  }
+
+  &-tit {
+    color: #fff;
+    font-size: 39px;
+  }
+  &-loginBt {
+    display: inline-block;
+    height: 40px;
+    padding: 0 20px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  &-btn {
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: $blue;
+  }
+  &-link {
+    color: $blue;
+    background-color: #fff;
+    margin-left: auto;
+  }
+}
+
+$gray: #A6A4A4;
+
+nav {
+  padding: 14px $padding;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: yellow;
+
+  ul {
+    display: inline-block;
+    // background-color: green;
+  }
+  li {
+    display: inline-block;
+    padding: 0 45px;
+  }
+  li:first-child {
+    padding-left: 5px;
+  }
+  li a {
+    color: $gray;
+    font-size: 23px;
+    font-weight: 500;
+  }
+  .active {
+    color: $blue;
+  }
+  .search-wrap {
+    position: relative;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  input {
+    width: 280px;
+    height: 37px;
+    border: none;
+    border-bottom: 2px solid $blue;
+    font-size: 16px;
+    padding: 0 40px 0 10px;
+  }
+  .search-wrap a {
+    position: absolute;
+    top: 4px;
+    right: 7px;
+  }
+  .fa-search {
+    color: $blue;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 870px) { 
+  .search-wrap {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 592px) { 
+  nav { 
+    ul {
+      width: 100%;
+    }
+    li {
+      width: 100%;
+      padding: 5px 45px !important;
+      text-align: center;
+    }
+  }
+  .search-wrap {
+    margin: 10px auto 0 !important;
+  }
+}
+
+// booklist
+.books {
+  width: 1440px;
+  margin: 60px auto 0;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin: 0 20px 25px;
+    text-align: center;
+    // background-color: green;
+  }
+  img {
+    width: 100%;
+    height: 285px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+  }
+  * {
+    display: block;
+  }
+  &-title {
+    font-weight: 500;
+    color: #454545;
+  }
+  &-price {
+    font-weight: 700;
+    color: $blue;
+  }
+}
+
+// detail
+.detail-wrap {
+  position: relative;
+  width: 70%;
+  min-height: 450px;
+  margin: 120px auto;
+  max-width: 1100px;
+  overflow: hidden;
+
+  img {
+    float: left;
+    width: 350px;
+    margin-right: 45px;
+    margin-bottom: 30px;
+  }
+  .tit {
+    display: block;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 700;
+    color: $blue;
+  }
+  .date {
+    display: block;
+    font-size: 21px;
+    // color: $blue;
+    // padding-bottom: 5px;
+  }
+  .info {
+    font-size: 17px;
+  }
+  button {
+    position: absolute;
+    bottom: 30px;
+    right: 0;
+    border: none;
+    color: $white;
+    background-color: $blue;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 35px;
+  }
+}
+
+.history-wrap {
+  // margin-left: 50px;
+  margin-top: 30px;
+  width: 1440px;
+  margin: 40px auto 0;
+  padding-left: 20px;
+}
+.recent {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.history {
+  display: inline-block;
+
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  button {
+    border: none;
+    color: $white;
+    background-color: $blue;
+    font-size: 16px;
+    padding: 5px 20px;
+    border-radius: 5px;
+  }
+}
+
+.serch-msg {
+  display: block;
+  width: 400px;
+  margin: 130px auto;
+  font-size: 40px;
+  color: $gray;
+}
