@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;800;900&display=swap');
+
+$white : #fff;
+$blue : #2749F9;
+$padding : 40px;
+
+body * {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-decoration: none;
+  color: #181818;
+}
+ul, li, h1, h2, h3 {
+  margin: 0;
+  padding: 0;
+}
+ul {list-style: none;}
+
+//  스타일 시작
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px $padding;
+  background-color: $blue;
+
+  &-tit {
+    color: #fff;
+    font-size: 39px;
+  }
+  &-btn {
+    display: inline-block;
+    height: 40px;
+    color: $blue;
+    padding: 0 20px;
+    font-size: 20px;
+    line-height: 0px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    background-color: #fff;
+  }
+}
+
+$gray: #A6A4A4;
+
+nav {
+  padding: 14px $padding;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  // background-color: yellow;
+
+  ul {
+    display: inline-block;
+    // background-color: green;
+  }
+  li {
+    display: inline-block;
+    padding: 0 45px;
+  }
+  li:first-child {
+    padding-left: 5px;
+  }
+  li a {
+    color: $gray;
+    font-size: 23px;
+    font-weight: 500;
+  }
+  .active {
+    color: $blue;
+  }
+  .search-wrap {
+    position: relative;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: top;
+  }
+  input {
+    width: 280px;
+    height: 37px;
+    border: none;
+    border-bottom: 2px solid $blue;
+    font-size: 16px;
+    padding: 0 40px 0 10px;
+  }
+  .search-wrap a {
+    position: absolute;
+    top: 4px;
+    right: 7px;
+  }
+  .fa-search {
+    color: $blue;
+    font-size: 24px;
+  }
+}
+@media screen and (max-width: 870px) { 
+  .search-wrap {
+    margin-top: 15px;
+  }
+}
+@media screen and (max-width: 592px) { 
+  nav { 
+    ul {
+      width: 100%;
+    }
+    li {
+      width: 100%;
+      padding: 5px 45px !important;
+      text-align: center;
+    }
+  }
+  .search-wrap {
+    margin: 10px auto 0 !important;
+  }
+}
+
+// booklist
+.books {
+  width: 1450px;
+  margin: 40px auto 0;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin: 0 20px 10px;
+    text-align: center;
+    // background-color: green;
+  }
+  img {
+    width: 100%;
+    height: 285px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    border: 1px solid #ddd;
+  }
+  * {
+    display: block;
+  }
+  &-title {
+    font-weight: 500;
+    color: #454545;
+  }
+  &-price {
+    font-weight: 700;
+    color: $blue;
+  }
+}

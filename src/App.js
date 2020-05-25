@@ -1,12 +1,16 @@
-import React, { useContext } from 'react';
-import './login.scss';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import './App.scss';
+import Header from './Components/Header';
+import MainRouter from './Router/MainRouter';
 
 function App() {
   return (
-    <div className="App">
-      <Link to="/login">로그인</Link>
-    </div>
+    <>
+      <div className="App">
+        <Header />
+      </div>
+      <MainRouter />
+    </>
   );
 }
 

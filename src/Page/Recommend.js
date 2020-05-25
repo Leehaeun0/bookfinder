@@ -1,0 +1,19 @@
+import React, { useEffect, useContext } from 'react';
+import BookList from '../Components/BookList';
+import { BookContext } from '../Context/Context';
+
+const Recommend = () => {
+  const { setRecommend } = useContext(BookContext);
+
+  useEffect(() => {
+    setRecommend();
+  }, []);
+  return (
+    <>
+      <div>recommend</div>
+      <BookList />
+    </>
+  );
+};
+
+export default Recommend;

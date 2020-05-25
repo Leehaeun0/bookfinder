@@ -1,6 +1,3 @@
-import bookApi from '../Api/Api';
-// getBestSeller, getRecommend, getNewBook, searchBook
-
 export const initState = {
   login: false,
   user: {
@@ -9,7 +6,7 @@ export const initState = {
     name: '',
   },
   book: [],
-  histoty: [],
+  history: [{ page: '', data: [] }],
   searchLog: [],
 };
 
@@ -27,6 +24,12 @@ export const reducer = (state, action) => {
         login: false,
         user: initState.user,
       };
+    case 'GETBOOK':
+      return {
+        ...state,
+        book: action.books,
+      };
+
     default:
       return state;
   }

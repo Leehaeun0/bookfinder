@@ -1,4 +1,5 @@
 import { useReducer, useRef } from 'react';
+import bookApi from '../Api/Api';
 import { initState, reducer } from '../Reducer/Reducer';
 // reducer: LOGIN, LOGOUT
 
@@ -6,6 +7,8 @@ const userBD = [
   { id: 0, userId: 'haeun114', userPw: 'haeun114', name: 'haeun' },
   { id: 1, userId: 'chiwon00', userPw: 'chiwon00', name: 'chiwon' },
 ];
+// LOGIN, LOGOUT
+// getBestSeller, getRecommend, getNewBook, searchBook
 
 const UseFetch = () => {
   const [state, dispatch] = useReducer(reducer, initState);
@@ -78,7 +81,27 @@ const UseFetch = () => {
     loginPw.current.focus();
   };
 
+  // 페이지 로드 관련
+  const setBestSeller = async () => {
+    const data = await bookApi.getBestSeller();
+    console.log(data);
+    dispatch({ type: 'GETBOOK', books: data.item });
+  };
+
+  const setRecommend = async () => {
+    const data = await bookApi.getRecommend();
+    console.log(data);
+    dispatch({ type: 'GETBOOK', books: data.item });
+  };
+
+  const setNew = async () => {
+    const data = await bookApi.getNewBook();
+    console.log(data);
+    dispatch({ type: 'GETBOOK', books: data.item });
+  };
+
   // 이벤트
+  // 로그인
   // 로그인 인풋 이벤트
   const loginInputEv = ({ target }) => {
     loginId.current.value && loginPw.current.value
@@ -111,6 +134,13 @@ const UseFetch = () => {
     history.goBack();
   };
 
+  // 메인 페이지
+  // 검색 이벤트
+  const searchBook = async value => {
+    const data = await bookApi.searchBook(value);
+    dispatch({ type: 'GETBOOK', books: data.item });
+  };
+
   return {
     state,
     loginId,
@@ -118,6 +148,10 @@ const UseFetch = () => {
     loginSubmit,
     loginInputEv,
     loginBtEv,
+    setBestSeller,
+    setRecommend,
+    setNew,
+    searchBook,
   };
 };
 
