@@ -11,7 +11,8 @@ const getBooks = (apiName, categoryId) =>
     .get(`${apiName}.api?${keyQuery}&categoryId=${categoryId}&output=json`)
     .then(r => r.data)
     .catch(e => {
-      console.error(e);
+      console.error(e, e.message);
+      // throw new Error(e);
     });
 
 const bookApi = {
